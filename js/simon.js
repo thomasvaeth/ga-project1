@@ -83,6 +83,7 @@ $(document).ready(function() {
 				playerArr = [];
 				idx = 0;
 				count = 0;
+				$('.count').html('--');
 			}
 		}
 	});
