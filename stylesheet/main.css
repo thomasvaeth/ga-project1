@@ -3,18 +3,34 @@ div {
 	width: 100px;
 }
 
-#green {
-	background-color: green;
+.green {
+	background-color: rgb(0,167,74);
 }
 
-#red {
-	background-color: red;
+.green-glow {
+	background-color: #13ff7c;
 }
 
-#yellow {
-	background-color: yellow;
+.red {
+	background-color: rgb(159,15,23);
 }
 
-#blue {
-	background-color: blue;
+.red-glow {
+	background-color: #ff4c4c;
+}
+
+.yellow {
+	background-color: rgb(204,167,7);
+}
+
+.yellow-glow {
+	background-color: #fed93f;
+}
+
+.blue {
+	background-color: rgb(9,74,143);
+}
+
+.blue-glow {
+	background-color: #1c8cff;
 }

@@ -27,7 +27,8 @@ function lightAndSound(simon) {
 				setTimeout(function() {
 					soundIdx = colorArr.indexOf(simon[order]);
 					soundsArr[soundIdx].play();
-					$('#' + simon[order]).fadeOut(250).fadeIn(250);
+					//$('#' + simon[order]).fadeOut(250).fadeIn(250);
+					$('.' + simon[order]).addClass(simon[order] + '-glow');
 				}, order * 1000)
 			})(i);
 		}
@@ -48,7 +49,7 @@ $(document).ready(function() {
 	$('.game-container').on('click', '.gameboard', function(e) {
 		e.stopPropagation();
 		if (playerTurn === true) {
-			playerGuess = $(this)[0].id
+			playerGuess = $(this)[0].id;
 			playerArr.push(playerGuess);
 			console.log(playerArr);
 
@@ -58,18 +59,22 @@ $(document).ready(function() {
 
 			if (simonArr[idx] === playerArr[idx]) {
 				if (idx === simonArr.length - 1) {
+					score();
 					playerTurn = false;
 					playerArr = [];
 					idx = 0;
 					nextColor();
 					lightAndSound(simonArr);
-					score();
 				} else {
 					idx++;
 				}
 			} else {
 				alert('Loser!');
 				playerTurn = false;
+				simonArr = [];
+				playerArr = [];
+				idx = 0;
+				count = 0;
 			}
 		}
 	});
