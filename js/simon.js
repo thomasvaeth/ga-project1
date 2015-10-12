@@ -5,6 +5,7 @@ var playerArr = [];
 var randomColor = 0;
 var playerGuess = '';
 var idx = 0;
+var count = 0;
 
 var greenSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
 var redSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
@@ -21,17 +22,26 @@ function nextColor() {
 
 function lightAndSound(simon) {
 	setTimeout(function() {
-		for (var i = 0; i < simonArr.length; i++) {
+		for (var i = 0; i < simon.length; i++) {
 			(function(order) {
 				setTimeout(function() {
-					soundIdx = colorArr.indexOf(simonArr[order]);
+					soundIdx = colorArr.indexOf(simon[order]);
 					soundsArr[soundIdx].play();
-					$('#' + simonArr[order]).fadeOut(250).fadeIn(250);
+					$('#' + simon[order]).fadeOut(250).fadeIn(250);
 				}, order * 1000)
 			})(i);
 		}
 	}, 500);
 	playerTurn = true;
+}
+
+function score() {
+	count++;
+	if (count < 10) {
+		$('.count').html('0' + count);
+	} else {
+		$('count').html(count);
+	}
 }
 
 $(document).ready(function() {
@@ -53,11 +63,12 @@ $(document).ready(function() {
 					idx = 0;
 					nextColor();
 					lightAndSound(simonArr);
+					score();
 				} else {
 					idx++;
 				}
 			} else {
-				console.log('Loser!');
+				alert('Loser!');
 				playerTurn = false;
 			}
 		}
