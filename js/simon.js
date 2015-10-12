@@ -13,6 +13,7 @@ var yellowSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.m
 var blueSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
 var soundsArr = [greenSound, redSound, yellowSound, blueSound];
 
+// Getting a color and pushing it to an array of computer moves.
 function nextColor() {
 	randomColor = colorArr[Math.floor(Math.random() * 4)];
 	simonArr.push(randomColor);
@@ -20,28 +21,35 @@ function nextColor() {
 	return simonArr;
 }
 
+// Adding a glow effect and adding sound to computer moves.
 function lightAndSound(simon) {
+	// First setTimeout is delay between player move ending and computer move starting.
 	setTimeout(function() {
 		for (var i = 0; i < simon.length; i++) {
 			(function(order) {
+				// Second setTimeout is for delay between computer moves.
 				setTimeout(function() {
 					soundIdx = colorArr.indexOf(simon[order]);
 					soundsArr[soundIdx].play();
-					//$('#' + simon[order]).fadeOut(250).fadeIn(250);
 					$('.' + simon[order]).addClass(simon[order] + '-glow');
-				}, order * 1000)
+					// Third setTimeout is for delay between removing glow effect.
+					setTimeout(function() {
+						$('.' + simon[order]).removeClass(simon[order] + '-glow')
+					}, 500);
+				}, order * 750);
 			})(i);
 		}
-	}, 500);
+	}, 1000);
 	playerTurn = true;
 }
 
+// Adding to the current score.
 function score() {
 	count++;
 	if (count < 10) {
 		$('.count').html('0' + count);
 	} else {
-		$('count').html(count);
+		$('.count').html(count);
 	}
 }
 
@@ -79,8 +87,10 @@ $(document).ready(function() {
 		}
 	});
 
+	// Starts game by getting computer move.
 	$('button').on('click', function() {
 		nextColor();
 		lightAndSound(simonArr);
 	});
+
 });
