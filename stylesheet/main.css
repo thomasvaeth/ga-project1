@@ -91,17 +91,19 @@ body {
 }
 
 h1 {
-	font-family: 'Alfa Slab One', cursive;
+	text-transform: uppercase;
+	font-family: 'Squada One', cursive;
+	transform: scaleY(0.6);
 	position: absolute;
 	color: white;
-	font-size: 60px;
-	top: 10px;
+	font-size: 85px;
+	top: -15px;
 	left: 16px;
-	letter-spacing: 1px;
+	letter-spacing: -2px;
 }
 
 span {
-	font-size: 10px;
+	font-size: 18px;
 }
 
 button {
