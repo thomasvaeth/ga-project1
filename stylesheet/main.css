@@ -1,3 +1,10 @@
+body {
+	border: 0;
+	padding: 0;
+	background-image: url('http://cdn.backgroundhost.com/backgrounds/subtlepatterns/purty_wood.png');
+	background-color: white;
+}
+
 .game-container {
 	height: 500px;
 	width: 500px;
