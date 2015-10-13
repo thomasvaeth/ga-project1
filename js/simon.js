@@ -6,6 +6,7 @@ var randomColor = 0;
 var playerGuess = '';
 var idx = 0;
 var count = 0;
+var gamePower = true;
 
 var greenSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
 var redSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
@@ -88,10 +89,17 @@ $(document).ready(function() {
 		}
 	});
 
-	// Starts game by getting computer move.
-	$('button').on('click', function() {
-		nextColor();
-		lightAndSound(simonArr);
+	// Turns the game on and off.
+	$('.power').on("click", function() {
+		if (gamePower === true) {
+			gamePower = false;
+			$('.count').html('--');
+			nextColor();
+			lightAndSound(simonArr);
+		} else {
+			gamePower = true;
+			$('.count').html('');
+		}
 	});
 
 });
