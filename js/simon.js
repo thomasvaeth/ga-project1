@@ -8,11 +8,14 @@ var idx = 0;
 var count = 0;
 var gamePower = true;
 
+// Making variables for all audio that is needed.
 var greenSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
 var redSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
 var yellowSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
 var blueSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
 var soundsArr = [greenSound, redSound, yellowSound, blueSound];
+// Wrong sound isn't correct, but good enough for demo.
+var wrongSound = new Audio('https://www.freesound.org/data/previews/142/142608_1840739-lq.mp3');
 
 // Getting a color and pushing it to an array of computer moves.
 function nextColor() {
@@ -62,9 +65,9 @@ $(document).ready(function() {
 			playerArr.push(playerGuess);
 			console.log(playerArr);
 
-			$(this).fadeOut(200).fadeIn(200);
 			soundIdx = colorArr.indexOf(playerGuess);
 			soundsArr[soundIdx].play();
+			//$(this).addClass(playerArr[idx] + '-glow');
 
 			if (simonArr[idx] === playerArr[idx]) {
 				if (idx === simonArr.length - 1) {
@@ -78,7 +81,7 @@ $(document).ready(function() {
 					idx++;
 				}
 			} else {
-				alert('Loser!');
+				wrongSound.play()
 				playerTurn = false;
 				simonArr = [];
 				playerArr = [];
@@ -99,6 +102,11 @@ $(document).ready(function() {
 		} else {
 			gamePower = true;
 			$('.count').html('');
+			playerTurn = false;
+			simonArr = [];
+			playerArr = [];
+			idx = 0;
+			count = 0;
 		}
 	});
 

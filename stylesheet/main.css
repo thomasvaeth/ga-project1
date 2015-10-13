@@ -47,7 +47,8 @@ body {
 	background-color: #27ae60;
 }
 
-.green-glow {
+.green-glow,
+.green:active {
 	background-color: #2ecc71;
 }
 
@@ -60,7 +61,8 @@ body {
 	background-color: #c0392b;
 }
 
-.red-glow {
+.red-glow,
+.red:active {
 	background-color: #e74c3c;
 }
 
@@ -73,7 +75,8 @@ body {
 	background-color: #f7ca18;
 }
 
-.yellow-glow {
+.yellow-glow,
+.yellow:active {
 	background-color: #f4d03f;
 }
 
@@ -86,7 +89,8 @@ body {
 	background-color: #2980b9;
 }
 
-.blue-glow {
+.blue-glow,
+.blue:active {
 	background-color: #3498db;
 }
 
@@ -107,6 +111,11 @@ span {
 }
 
 button {
+	outline: none;
+	border: none;
+}
+
+.power {
 	height: 35px;
   width: 35px;
   background-color: #27ae60;
