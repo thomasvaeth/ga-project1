@@ -37,7 +37,7 @@ function startItUp(sequence) {
 	// Fourth setTimeout is for delay before starting game waiting for initial sequence to end.
 	setTimeout(function() {
 		nextColor();
-		lightAndSound(simonArr);
+		lightAndSound();
 	}, 7100);
 }
 
@@ -50,9 +50,17 @@ function nextColor() {
 }
 
 // Adding a glow effect and adding sound to computer moves.
-function lightAndSound(simon) {
+function lightAndSound() {
 	// First setTimeout is delay between player move ending and computer move starting.
 	setTimeout(function() {
+		speed(simonArr);
+	}, 1000);
+	playerTurn = true;
+}
+
+function speed(simon) {
+	if (count < 5) {
+		console.log('First!');
 		for (var i = 0; i < simon.length; i++) {
 			(function(order) {
 				// Second setTimeout is for delay between computer moves.
@@ -63,12 +71,39 @@ function lightAndSound(simon) {
 					// Third setTimeout is for delay between removing glow effect.
 					setTimeout(function() {
 						$('.' + simon[order]).removeClass(simon[order] + '-glow')
+					}, 700);
+				}, order * 750);
+			})(i);
+		}
+	} else if (count < 13) {
+		console.log('Second!');
+		for (var i = 0; i < simon.length; i++) {
+			(function(order) {
+				setTimeout(function() {
+					soundIdx = colorArr.indexOf(simon[order]);
+					soundsArr[soundIdx].play();
+					$('.' + simon[order]).addClass(simon[order] + '-glow');
+					setTimeout(function() {
+						$('.' + simon[order]).removeClass(simon[order] + '-glow')
+					}, 600);
+				}, order * 650);
+			})(i);
+		}
+	} else {
+		console.log('Third!');
+		for (var i = 0; i < simon.length; i++) {
+			(function(order) {
+				setTimeout(function() {
+					soundIdx = colorArr.indexOf(simon[order]);
+					soundsArr[soundIdx].play();
+					$('.' + simon[order]).addClass(simon[order] + '-glow');
+					setTimeout(function() {
+						$('.' + simon[order]).removeClass(simon[order] + '-glow')
 					}, 500);
 				}, order * 550);
 			})(i);
 		}
-	}, 1000);
-	playerTurn = true;
+	}
 }
 
 // Adding to the current score.
