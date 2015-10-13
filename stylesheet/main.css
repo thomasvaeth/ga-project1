@@ -113,6 +113,7 @@ span {
 button {
 	outline: none;
 	border: none;
+	cursor: pointer;
 }
 
 .power {
@@ -120,12 +121,9 @@ button {
   width: 35px;
   background-color: #27ae60;
   border-radius: 100%;
-  border: none;
   position: absolute;
   top: 130px;
   left: 130px;
-  cursor: pointer;
-  outline: none;
 }
 
 .count {
