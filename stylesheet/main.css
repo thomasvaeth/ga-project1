@@ -70,11 +70,11 @@ body {
 }
 
 .yellow {
-	background-color: #f4d03f;
+	background-color: #f7ca18;
 }
 
 .yellow-glow {
-	background-color: #f7ca18;
+	background-color: #f4d03f;
 }
 
 .blue,
@@ -115,6 +115,7 @@ button {
   position: absolute;
   top: 130px;
   left: 130px;
+  cursor: pointer;
   outline: none;
 }
 
