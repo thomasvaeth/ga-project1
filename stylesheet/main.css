@@ -118,14 +118,15 @@ button {
 
 .count {
 	font-family: 'VT323';
-	height: 40px;
+	height: 35px;
 	width: 40px;
 	background-color: black;
 	color: white;
 	position: absolute;
-	top: 126px;
+	top: 130px;
   left: 55px;
   font-size: 28px;
   text-align: center;
   padding-top: 5px;
+  border-radius: 5%;
 }
