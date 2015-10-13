@@ -45,7 +45,6 @@ function startItUp(sequence) {
 function nextColor() {
 	randomColor = colorArr[Math.floor(Math.random() * 4)];
 	simonArr.push(randomColor);
-	console.log(simonArr);
 	return simonArr;
 }
 
@@ -67,7 +66,7 @@ function lightAndSound(simon) {
 				}, order * (speed() + 50));
 			})(i);
 		}
-	}, 1000);
+	}, 850);
 	playerTurn = true;
 }
 
@@ -98,12 +97,9 @@ $(document).ready(function() {
 		if (playerTurn === true) {
 			playerGuess = $(this)[0].id;
 			playerArr.push(playerGuess);
-			console.log(playerArr);
-
-			soundIdx = colorArr.indexOf(playerGuess);
-			//soundsArr[soundIdx].play();
 
 			if (simonArr[idx] === playerArr[idx]) {
+				soundIdx = colorArr.indexOf(playerGuess);
 				soundsArr[soundIdx].play();
 				if (idx === simonArr.length - 1) {
 					score();
@@ -123,11 +119,11 @@ $(document).ready(function() {
 				idx = 0;
 				count = 0;
 				$('.count').html('--');
-				// Starts a new game 
+				// Starts a new game in 3 seconds.
 				setTimeout(function() {
 					nextColor();
 					lightAndSound(simonArr);
-				}, 7100);
+				}, 3000);
 			}
 		}
 	});
@@ -150,3 +146,5 @@ $(document).ready(function() {
 	});
 
 });
+
+// Reverse engineering a Simon game: http://goo.gl/pblIfM
