@@ -1,15 +1,9 @@
-div {
-	height: 100px;
-	width: 100px;
-	border: 1px solid red !important;
-}
-
 .game-container {
 	height: 500px;
 	width: 500px;
   border-radius: 100%;
   margin: 0 auto;
-  background-color: black;
+  background-color: #191919;
   position: relative;
 }
 
@@ -17,18 +11,25 @@ div {
 	height: 225px;
   width: 225px;
   float: left;
-  margin-top: 15px;
-  margin-left: 15px;
+  margin-top: 16px;
+  margin-left: 16px;
+  border-radius: 2%;
+  cursor: pointer;
 }
 
 .info {
-  height: 250px;
-  width: 250px;
+  height: 225px;
+  width: 225px;
   border-radius: 100%;
-  background-color: black;
+  background-color: #191919;
   position: relative;
-  left: 125px;
-  top: 125px;
+  left: 140px;
+  top: 140px;
+}
+
+.green,
+.green-glow {
+	border-top-left-radius: 100%;
 }
 
 .green {
@@ -39,12 +40,22 @@ div {
 	background-color: #13ff7c;
 }
 
+.red,
+.red-glow {
+	border-top-right-radius: 100%;
+}
+
 .red {
 	background-color: rgb(159,15,23);
 }
 
 .red-glow {
 	background-color: #ff4c4c;
+}
+
+.yellow,
+.yellow-glow {
+	border-bottom-left-radius: 100%;
 }
 
 .yellow {
@@ -55,6 +66,11 @@ div {
 	background-color: #fed93f;
 }
 
+.blue,
+.blue-glow {
+	border-bottom-right-radius: 100%;
+}
+
 .blue {
 	background-color: rgb(9,74,143);
 }
@@ -63,10 +79,41 @@ div {
 	background-color: #1c8cff;
 }
 
+h1 {
+	font-family: 'Alfa Slab One', cursive;
+	position: absolute;
+	color: white;
+	font-size: 60px;
+	top: 10px;
+	left: 16px;
+	letter-spacing: 1px;
+}
+
+span {
+	font-size: 10px;
+}
+
 button {
-	height: 30px;
-	width: 30px;
-	border-radius: 100%;
-	border: none;
-	background-color: #13ff7c;
+	height: 35px;
+  width: 35px;
+  background-color: rgb(0,167,74);
+  border-radius: 100%;
+  border: none;
+  position: absolute;
+  top: 130px;
+  left: 130px;
+}
+
+.count {
+	font-family: 'VT323';
+	height: 40px;
+	width: 40px;
+	background-color: black;
+	color: white;
+	position: absolute;
+	top: 126px;
+  left: 55px;
+  font-size: 28px;
+  text-align: center;
+  padding-top: 5px;
 }
