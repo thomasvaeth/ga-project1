@@ -37,7 +37,7 @@ function startItUp(sequence) {
 	// Fourth setTimeout is for delay before starting game waiting for initial sequence to end.
 	setTimeout(function() {
 		nextColor();
-		lightAndSound();
+		lightAndSound(simonArr);
 	}, 7100);
 }
 
@@ -49,18 +49,10 @@ function nextColor() {
 	return simonArr;
 }
 
-// Adding a glow effect and adding sound to computer moves.
-function lightAndSound() {
+// Adding a glow effect and sound to computer moves.
+function lightAndSound(simon) {
 	// First setTimeout is delay between player move ending and computer move starting.
 	setTimeout(function() {
-		speed(simonArr);
-	}, 1000);
-	playerTurn = true;
-}
-
-function speed(simon) {
-	if (count < 5) {
-		console.log('First!');
 		for (var i = 0; i < simon.length; i++) {
 			(function(order) {
 				// Second setTimeout is for delay between computer moves.
@@ -71,38 +63,22 @@ function speed(simon) {
 					// Third setTimeout is for delay between removing glow effect.
 					setTimeout(function() {
 						$('.' + simon[order]).removeClass(simon[order] + '-glow')
-					}, 700);
-				}, order * 750);
+					}, speed());
+				}, order * (speed() + 50));
 			})(i);
 		}
+	}, 1000);
+	playerTurn = true;
+}
+
+// Determining the time between computer moves based on skill level.
+function speed() {
+	if (count < 5) {
+		return 700;
 	} else if (count < 13) {
-		console.log('Second!');
-		for (var i = 0; i < simon.length; i++) {
-			(function(order) {
-				setTimeout(function() {
-					soundIdx = colorArr.indexOf(simon[order]);
-					soundsArr[soundIdx].play();
-					$('.' + simon[order]).addClass(simon[order] + '-glow');
-					setTimeout(function() {
-						$('.' + simon[order]).removeClass(simon[order] + '-glow')
-					}, 600);
-				}, order * 650);
-			})(i);
-		}
+		return 600;
 	} else {
-		console.log('Third!');
-		for (var i = 0; i < simon.length; i++) {
-			(function(order) {
-				setTimeout(function() {
-					soundIdx = colorArr.indexOf(simon[order]);
-					soundsArr[soundIdx].play();
-					$('.' + simon[order]).addClass(simon[order] + '-glow');
-					setTimeout(function() {
-						$('.' + simon[order]).removeClass(simon[order] + '-glow')
-					}, 500);
-				}, order * 550);
-			})(i);
-		}
+		return 500;
 	}
 }
 
@@ -147,6 +123,11 @@ $(document).ready(function() {
 				idx = 0;
 				count = 0;
 				$('.count').html('--');
+				// Starts a new game 
+				setTimeout(function() {
+					nextColor();
+					lightAndSound(simonArr);
+				}, 7100);
 			}
 		}
 	});
