@@ -1,0 +1,144 @@
+body {
+	border: 0;
+	padding: 0;
+	background-image: url('http://cdn.backgroundhost.com/backgrounds/subtlepatterns/purty_wood.png');
+	background-color: white;
+}
+
+.game-container {
+	height: 500px;
+	width: 500px;
+  border-radius: 100%;
+  background-color: #191919;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.gameboard {
+	height: 225px;
+  width: 225px;
+  float: left;
+  margin-top: 16px;
+  margin-left: 16px;
+  border-radius: 2%;
+  cursor: pointer;
+}
+
+.info {
+  height: 225px;
+  width: 225px;
+  border-radius: 100%;
+  background-color: #191919;
+  position: relative;
+  left: 140px;
+  top: 140px;
+}
+
+.green,
+.green-glow {
+	border-top-left-radius: 100%;
+}
+
+.green {
+	background-color: #27ae60;
+}
+
+.green-glow,
+.green:active {
+	background-color: #2ecc71;
+}
+
+.red,
+.red-glow {
+	border-top-right-radius: 100%;
+}
+
+.red {
+	background-color: #c0392b;
+}
+
+.red-glow,
+.red:active {
+	background-color: #e74c3c;
+}
+
+.yellow,
+.yellow-glow {
+	border-bottom-left-radius: 100%;
+}
+
+.yellow {
+	background-color: #f7ca18;
+}
+
+.yellow-glow,
+.yellow:active {
+	background-color: #f4d03f;
+}
+
+.blue,
+.blue-glow {
+	border-bottom-right-radius: 100%;
+}
+
+.blue {
+	background-color: #2980b9;
+}
+
+.blue-glow,
+.blue:active {
+	background-color: #3498db;
+}
+
+h1 {
+	text-transform: uppercase;
+	font-family: 'Squada One', cursive;
+	transform: scaleY(0.6);
+	position: absolute;
+	color: white;
+	font-size: 85px;
+	top: -15px;
+	left: 16px;
+	letter-spacing: -2px;
+	cursor: default;
+}
+
+span {
+	font-size: 18px;
+}
+
+button {
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+
+.power {
+	height: 35px;
+  width: 35px;
+  background-color: #27ae60;
+  border-radius: 100%;
+  position: absolute;
+  top: 130px;
+  left: 130px;
+}
+
+.count {
+	font-family: 'VT323';
+	height: 35px;
+	width: 40px;
+	background-color: black;
+	color: white;
+	position: absolute;
+	top: 130px;
+  left: 55px;
+  font-size: 28px;
+  text-align: center;
+  padding-top: 5px;
+  border-radius: 5%;
+  cursor: default;
+}
