@@ -90,10 +90,10 @@ $(document).ready(function() {
 			console.log(playerArr);
 
 			soundIdx = colorArr.indexOf(playerGuess);
-			soundsArr[soundIdx].play();
-			//$(this).addClass(playerArr[idx] + '-glow');
+			//soundsArr[soundIdx].play();
 
 			if (simonArr[idx] === playerArr[idx]) {
+				soundsArr[soundIdx].play();
 				if (idx === simonArr.length - 1) {
 					score();
 					playerTurn = false;
