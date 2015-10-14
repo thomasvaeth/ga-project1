@@ -11,7 +11,7 @@ Simon is an electronic memory game. Four colored buttons each produce a tone and
 * Animate.CSS
 
 ### Approach Taken
-I put CSS as a low priority. The game was built using a column of four different colored square divs, which was later turned to buttons, without sound. When the basic functionality was working I spent time on the CSS. The hardest part of the desktop CSS was getting the buttons to be rounded on the outside, but resolved after a day of searching.
+I put CSS as a low priority. The game was built using a column of four different colored square divs, which was later turned to buttons, without sound. When the basic functionality was working I spent time on the CSS. The hardest part of the desktop CSS was getting the buttons to be rounded on the outside, but resolved after a day of searching. After the main CSS was done I spent a lot of time tinkering. I found an article about reverse engineering the game, so tried to get a lot of the timing to be similar. I gave media queries a shot when everything was done. I also added on extra features such as Animate.CSS to improve the look of the page.
 
 ### Unsolved Problems
 * Player is able to click button when the computer is still doing the sequence.
