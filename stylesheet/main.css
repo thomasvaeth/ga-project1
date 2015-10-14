@@ -72,12 +72,12 @@ body {
 }
 
 .yellow {
-	background-color: #f7ca18;
+	background-color: #f4d03f;
 }
 
 .yellow-glow,
 .yellow:active {
-	background-color: #f4d03f;
+	background-color: #fde3a7;
 }
 
 .blue,
