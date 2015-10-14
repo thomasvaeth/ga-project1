@@ -3,7 +3,6 @@ body {
 	padding: 0;
 	background-image: url('http://cdn.backgroundhost.com/backgrounds/subtlepatterns/purty_wood.png');
 	background-color: white;
-	overflow: hidden;
 }
 
 .game-container {
@@ -152,10 +151,6 @@ a {
 
 
 @media (min-width: 670px) {
-	body {
-		overflow: initial;
-	}
-
 	.game-container {
 		height: 500px;
 		width: 500px;

@@ -152,6 +152,11 @@ $(document).ready(function() {
 		}
 	});
 
+	// Disables mobile scrolling.
+	$(document).bind('touchmove', function(e) {
+		e.preventDefault();
+	});
+
 });
 
 // Reverse engineering a Simon game: http://goo.gl/pblIfM
