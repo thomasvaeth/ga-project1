@@ -139,12 +139,12 @@ $(document).ready(function() {
 	$('.power').on("click", function() {
 		if (gamePower === true) {
 			gamePower = false;
-			$('img').hide();
+			$('.arrow').hide();
 			$('.count').html('--');
 			startItUp(startSequence);
 		} else {
 			gamePower = true;
-			$('img').show();
+			$('.arrow').show();
 			$('.count').html('');
 			playerTurn = false;
 			simonArr = [];
@@ -160,7 +160,7 @@ $(document).ready(function() {
 	});
 
 	setTimeout(function() {
-		$('img').show();
+		$('.arrow').show();
 	}, 1250);
 
 });
