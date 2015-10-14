@@ -94,7 +94,7 @@ button {
 .power {
 	position: fixed;
 	top: 2%;
-	right: 10%;
+	right: 5%;
 	height: 40px;
   width: 40px;
   background-color: #27ae60;
@@ -114,11 +114,43 @@ button {
   cursor: default;
   position: fixed;
   top: 2%;
-  right: 25%;
+  right: 18%;
+}
+
+a {
+	display: none;
+}
+
+@media (min-width: 480px) {
+	.green,
+	.green-glow {
+		margin-top: 15%;
+	}
+
+	h1 {
+		right: 30%;
+	}
+}
+
+@media (min-width: 560px) {
+	.game-container {
+		margin-top: 10%;
+	}
+
+	.green,
+	.green-glow {
+		margin-top: 4%;
+	}
+
+	h1 {
+		color: #191919;
+		top: -20%;
+		right: 35%;
+	}
 }
 
 
-@media (min-width: 480px) {
+@media (min-width: 670px) {
 	.game-container {
 		height: 500px;
 		width: 500px;
@@ -164,6 +196,7 @@ button {
 	}
 
 	h1 {
+		color: white;
 		position: absolute;
 		top: -15px;
 		left: 16px;
@@ -181,6 +214,10 @@ button {
 		position: absolute;
 		top: 130px;
 	  left: 55px;
+	}
+
+	a {
+		display: initial;
 	}
 
 }
