@@ -7,6 +7,7 @@ var playerGuess = '';
 var idx = 0;
 var count = 0;
 var gamePower = true;
+// Start sequence could be randomized, but this is the sequence I saw on a video online.
 var startSequence = ['green', 'red', 'blue', 'green', 'yellow', 'red', 'blue', 'green', 'yellow', 'red', 'green', 'red', 'green', 'yellow', 'blue', 'red', 'green', 'blue', 'red', 'yellow', 'green', 'red', 'blue', 'yellow'];
 
 // Making variables for all audio that is needed.
@@ -18,6 +19,7 @@ var soundsArr = [greenSound, redSound, yellowSound, blueSound];
 // Wrong sound isn't correct, but good enough for demo.
 var wrongSound = new Audio('https://www.freesound.org/data/previews/142/142608_1840739-lq.mp3');
 
+// Start sequence doesn't have any sound in this version since I could not find one but a 6 second sound clip can be added.
 function startItUp(sequence) {
 	// First setTimeout is delay between pressing start and starting intro sequence.
 	setTimeout(function() {
@@ -94,13 +96,16 @@ function score() {
 $(document).ready(function() {
 	$('.game-container').on('click', '.gameboard', function(e) {
 		e.stopPropagation();
+		// 
 		if (playerTurn === true) {
 			playerGuess = $(this)[0].id;
 			playerArr.push(playerGuess);
 
 			if (simonArr[idx] === playerArr[idx]) {
+				// Moved sound in this if else statement, so if move is wrong it will not play both sounds.
 				soundIdx = colorArr.indexOf(playerGuess);
 				soundsArr[soundIdx].play();
+				// If the index number is now the same number as the computer array the turn has ended so player turns get reset.
 				if (idx === simonArr.length - 1) {
 					score();
 					playerTurn = false;
@@ -108,10 +113,12 @@ $(document).ready(function() {
 					idx = 0;
 					nextColor();
 					lightAndSound(simonArr);
+					// Else the index increases by one and player goes again.
 				} else {
 					idx++;
 				}
 			} else {
+				// If the player move is wrong everything is reset before a new game begins.
 				wrongSound.play()
 				playerTurn = false;
 				simonArr = [];
@@ -119,7 +126,7 @@ $(document).ready(function() {
 				idx = 0;
 				count = 0;
 				$('.count').html('--');
-				// Starts a new game in 3 seconds.
+				// Starts a new game in 3 seconds just like the real game.
 				setTimeout(function() {
 					nextColor();
 					lightAndSound(simonArr);
