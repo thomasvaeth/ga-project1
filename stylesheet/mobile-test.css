@@ -117,6 +117,14 @@ button {
   right: 18%;
 }
 
+img {
+	display: none;
+}
+
+.arrow {
+	visibility: hidden;
+}
+
 a {
 	display: none;
 }
@@ -214,6 +222,18 @@ a {
 		position: absolute;
 		top: 130px;
 	  left: 55px;
+	}
+
+	img {
+		display: initial;
+	}
+
+	.arrow {
+		display: none;
+		visibility: initial;
+		position: absolute;
+		top: 80px;
+		left: 175px;
 	}
 
 	a {
