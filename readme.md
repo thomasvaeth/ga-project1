@@ -20,5 +20,10 @@ I put CSS as a low priority. The game was built using a column of four different
 * I did not build the page thinking mobile first, so there are problems with the landscape view.
 * Sounds can only be played at set intervals. When the interval is too short the sound will not play. Only really comes up in the mobile version.
 
-### Desktop Screenshot
-![Simon](https://github.com/thomasvaeth/ga-simon/blob/master/images/screenshot.png "Simon screenshot")
+### Screenshots
+Desktop
+![Simon Desktop](https://github.com/thomasvaeth/ga-simon/blob/master/images/desktop-shot.png "Desktop screenshot")
+iPhone Portrait
+![Simon Portrait](https://github.com/thomasvaeth/ga-simon/blob/master/images/iphone-portrait.png "Portrait screenshot")
+iPhone Landscape
+![Simon Landscape](https://github.com/thomasvaeth/ga-simon/blob/master/images/iphone-landscape.png "Landscape screenshot")
