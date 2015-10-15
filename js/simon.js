@@ -96,7 +96,6 @@ function score() {
 $(document).ready(function() {
 	$('.game-container').on('click', '.gameboard', function(e) {
 		e.stopPropagation();
-		// 
 		if (playerTurn === true) {
 			playerGuess = $(this)[0].id;
 			playerArr.push(playerGuess);
@@ -139,6 +138,7 @@ $(document).ready(function() {
 	$('.power').on("click", function() {
 		if (gamePower === true) {
 			gamePower = false;
+			$('.gameboard').removeAttr('disabled');
 			$('.arrow').hide();
 			$('.count').html('--');
 			startItUp(startSequence);
@@ -147,6 +147,7 @@ $(document).ready(function() {
 			$('.arrow').show();
 			$('.count').html('');
 			playerTurn = false;
+			$('.gameboard').attr('disabled', 'disabled');
 			simonArr = [];
 			playerArr = [];
 			idx = 0;
