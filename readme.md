@@ -8,6 +8,7 @@ Simon is an electronic memory game. Four colored buttons each produce a tone and
 * CSS
 * JavaScript
 * jQuery
+* Google Fonts
 * Animate.CSS
 
 ### Approach Taken
