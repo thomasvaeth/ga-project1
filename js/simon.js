@@ -77,9 +77,9 @@ function speed() {
 	if (count < 5) {
 		return 700;
 	} else if (count < 13) {
-		return 600;
+		return 650;
 	} else {
-		return 500;
+		return 600;
 	}
 }
 
