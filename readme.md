@@ -1,4 +1,4 @@
-# Simon - A Game by Thomas Vaeth
+# [Simon - A Game by Thomas Vaeth](http://thomasvaeth.github.io/ga-simon/)
 ### About
 Simon is an electronic memory game. Four colored buttons each produce a tone and light when pressed. A round of the game consists of a button being activated by the computer and the player has to repeat the pattern. Each round repeats the same pattern and adds an additional button. The game opens with a pattern of 24 colors when first turned on, then starts with 1 after a few seconds. When the player makes a wrong move a buzzer will sound and a new game will start in a few seconds.
 [Simon Wikipedia](https://en.wikipedia.org/wiki/Simon_(game))
