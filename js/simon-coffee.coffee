@@ -33,7 +33,7 @@ startItUp = (sequence) ->
 						$('.' + sequence[order]).removeClass(sequence[order] + '-glow')
 					, 200
 				, order * 250
-			)(i)
+			) i
 	, 100
 	# Fourth setTimeout is for delay before starting game waiting for initial sequence to end.
 	setTimeout ->
