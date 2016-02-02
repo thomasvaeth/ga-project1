@@ -97,7 +97,7 @@
   score = function() {
     count++;
     if (count < 10) {
-      return $('.count').html('0' + count);
+      return $('.count').html("0" + count);
     } else {
       return $('.count').html(count);
     }

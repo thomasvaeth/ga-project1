@@ -17,7 +17,7 @@ yellowSound = new Audio 'https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'
 blueSound = new Audio 'https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'
 soundsArr = [greenSound, redSound, yellowSound, blueSound]
 # Wrong sound isn't correct, but good enough for demo.
-wrongSound = new Audio('https://www.freesound.org/data/previews/142/142608_1840739-lq.mp3')
+wrongSound = new Audio 'https://www.freesound.org/data/previews/142/142608_1840739-lq.mp3'
 
 # Start sequence doesn't have any sound in this version since I could not find one but a 6 second sound clip can be added.
 startItUp = (sequence) ->
@@ -44,7 +44,7 @@ startItUp = (sequence) ->
 # Getting a color and pushing it to an array of computer moves.
 nextColor = ->
 	randomColor = colorArr[Math.floor(Math.random() * 4)]
-	simonArr.push(randomColor)
+	simonArr.push randomColor
 	simonArr
 
 # Adding a glow effect and sound to computer moves.
@@ -63,7 +63,7 @@ lightAndSound = (simon) ->
 						$('.' + simon[order]).removeClass(simon[order] + '-glow')
 					, speed()
 				, order * (speed() + 50)
-			)(i)
+			) i
 	, 850
 	playerTurn = true
 
@@ -80,20 +80,20 @@ speed = ->
 score = ->
 	count++
 	if count < 10
-		$('.count').html('0' + count)
+		$('.count').html "0#{count}"
 	else
-		$('.count').html(count)
+		$('.count').html count
 
 $(document).ready ->
 	$('.game-container').on('click', '.gameboard', (e) ->
 		e.stopPropagation()
 		if playerTurn == true
 			playerGuess = $(this)[0].id
-			playerArr.push(playerGuess)
+			playerArr.push playerGuess
 
 			if simonArr[idx] == playerArr[idx]
 				# Moved sound in this if else statement, so if move is wrong it will not play both sounds.
-				soundIdx = colorArr.indexOf(playerGuess)
+				soundIdx = colorArr.indexOf playerGuess
 				soundsArr[soundIdx].play()
 				# If the index number is now the same number as the computer array the turn has ended so player turns get reset.
 				if idx == simonArr.length - 1
@@ -114,7 +114,7 @@ $(document).ready ->
 				playerArr = []
 				idx = 0
 				count = 0
-				$('.count').html('--')
+				$('.count').html '--'
 				# Starts a new game in 3 seconds just like the real game.
 				setTimeout ->
 					nextColor()
@@ -126,9 +126,9 @@ $(document).ready ->
 	$('.power').on('click', ->
 		if gamePower == true
 			gamePower = false
-			$('.gameboard').removeAttr('disabled')
+			$('.gameboard').removeAttr 'disabled'
 			$('.arrow').hide()
-			$('.count').html('--')
+			$('.count').html '--'
 			startItUp(startSequence)
 		else
 			gamePower = true
