@@ -79,10 +79,7 @@ speed = ->
 # Adding to the current score.
 score = ->
 	count++
-	if count < 10
-		$('.count').html "0#{count}"
-	else
-		$('.count').html count
+	if count < 10 then $('.count').html "0#{count}" else $('.count').html count
 
 $(document).ready ->
 	$('.game-container').on('click', '.gameboard', (e) ->
